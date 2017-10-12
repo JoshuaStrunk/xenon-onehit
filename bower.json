@@ -1,0 +1,25 @@
+{
+  "name": "xenon-onehit",
+  "homepage": "https://github.com/acaxlabs/xenon-onehit",
+  "authors": [
+    "Don Archer <drasticp@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components/",
+    "test",
+    "tests"
+  ], 
+  "dependencies": {
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.0.0",
+    "paper-behaviors": "PolymerElements/paper-behaviors#^1.0.0",
+    "paper-icon-button": "PolymerElements/paper-material#^1.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^1.0.0",
+    "polymer": "Polymer/polymer#^1.1.0"
+  }
+}
