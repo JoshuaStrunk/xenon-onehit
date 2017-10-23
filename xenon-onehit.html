@@ -11,6 +11,7 @@
             from { background-position: 100% 0; }
             to { background-position: 000% 0; }
         }
+        :host.running { animation-play-state:running }
         :host {
             animation: animatedBackground 2s linear infinite; 
             animation-play-state: paused; 
@@ -83,7 +84,8 @@
       ],
 
       properties: {
-        raised: { type: Boolean, reflectToAttribute: true, value: false, observer: '_calculateElevation' }
+          raised: { type: Boolean, reflectToAttribute: true, value: false, observer: '_calculateElevation' }, 
+          loading: { type:Boolean,notify:true, observer:"_onLoadingChange" }
       },
       listeners: {
           "tap":"_onTap"
@@ -95,9 +97,9 @@
           Polymer.PaperButtonBehaviorImpl._calculateElevation.apply(this);
         }
       },
-      _onTap: function() {
-        this.style.animationPlayState = "running";
-        this.disabled = true;
+      _onLoadingChange: function (loading) {
+          this.toggleClass("running", loading, this);
+          this.disabled = loading;
       }
     });
   </script>
